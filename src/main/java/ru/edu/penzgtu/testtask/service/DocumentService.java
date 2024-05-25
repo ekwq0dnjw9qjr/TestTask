@@ -10,15 +10,11 @@ import ru.edu.penzgtu.testtask.service.mapper.DocumentMapper;
 import java.util.List;
 
 @Service
-
+@RequiredArgsConstructor
 public class DocumentService {
     private final DocumentRepository documentRepository;
     private final DocumentMapper documentMapper;
 
-    public DocumentService(DocumentRepository documentRepository, DocumentMapper documentMapper) {
-        this.documentRepository = documentRepository;
-        this.documentMapper = documentMapper;
-    }
 
     public DocumentDto getDocumentDto(Long id) {
         Document document = documentRepository.findById(id)

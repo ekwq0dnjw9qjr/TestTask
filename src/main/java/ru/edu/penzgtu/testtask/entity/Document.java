@@ -3,9 +3,13 @@ package ru.edu.penzgtu.testtask.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@EqualsAndHashCode
 @Entity
+@Getter
+@Setter
+@EqualsAndHashCode
 @Table(name = "documents")
 public class Document {
 

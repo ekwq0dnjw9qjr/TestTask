@@ -12,14 +12,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/documents")
-
+@RequiredArgsConstructor
 public class DocumentController {
     private final DocumentService documentService;
-
-    public DocumentController(DocumentService documentService) {
-        this.documentService = documentService;
-    }
-
 
     @GetMapping("/{id}")
     public DocumentDto getDocumentById(@PathVariable Long id) {
