@@ -93,7 +93,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <!--suppress UnresolvedMavenProperty -->
+                            <!--suppress UnresolvedMavenProperty -->1
                             <version>${org.projectlombok.version}</version>
                         </path>
                         <path>
