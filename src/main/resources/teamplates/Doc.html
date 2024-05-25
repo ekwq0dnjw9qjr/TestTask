@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Document Management</title>
+</head>
+<body>
+<h1>Document Management System</h1>
+<div>
+    <form th:action="@{/api/documents/search}" method="get">
+        <input type="text" name="title" placeholder="Search by Number"/>
+        <input type="text" name="type" placeholder="Search by Type"/>
+        <button type="submit">Search</button>
+    </form>
+</div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="document : ${documents}">
+            <td th:text="${document.id}"></td>
+            <td th:text="${document.title}"></td>
+            <td th:text="${document.type}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
