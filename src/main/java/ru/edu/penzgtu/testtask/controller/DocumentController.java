@@ -2,8 +2,7 @@ package ru.edu.penzgtu.testtask.controller;
 
 
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.edu.penzgtu.testtask.baseresponse.BaseResponseService;
 import ru.edu.penzgtu.testtask.baseresponse.ResponseWrapper;
 import ru.edu.penzgtu.testtask.dto.DocumentDto;
-import ru.edu.penzgtu.testtask.entity.Document;
 import ru.edu.penzgtu.testtask.service.DocumentService;
 
 import java.util.List;
@@ -30,19 +28,23 @@ public class DocumentController {
     }
 
     @GetMapping("/documents")
-    public ResponseWrapper<List<DocumentDto>> getDocumentsByName(@RequestParam String title) {
+    public ResponseWrapper<List<DocumentDto>> getDocumentsByTitle(@RequestParam String title) {
         return baseResponseService.wrapSuccessResponse(documentService.findDocumentsByTitle(title));
     }
 
     @GetMapping
     public List<DocumentDto> getAllDocuments() {
-        return documentService.getAllDocumentDtos();
+        return documentService.getAllDocuments();
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public DocumentDto createDocument(@RequestBody @Valid DocumentDto documentDto) {
-        return documentService.createDocument(documentDto);
+    public ResponseEntity<DocumentDto> createDocument(@RequestBody @Valid DocumentDto documentDto) {
+        try {
+            DocumentDto createDocument = documentService.createDocument(documentDto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(createDocument);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
     }
 
 

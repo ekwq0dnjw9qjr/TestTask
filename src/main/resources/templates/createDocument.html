@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Create Document</title>
+    <title>Создать Документ</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,25 +52,25 @@
 </head>
 <body>
 <div class="container">
-    <h1>Create New Document</h1>
+    <h1>Создать Новый Документ</h1>
     <form th:action="@{/documents/save}" th:object="${document}" method="post">
 
-        <label for="title">Title:</label>
+        <label for="title">Название:</label>
         <input id="title" type="text" th:field="*{title}" />
 
-        <label for="type">Type:</label>
+        <label for="type">Тип:</label>
         <input id="type" type="text" th:field="*{type}" />
 
-        <label for="author">Author:</label>
+        <label for="author">Автор:</label>
         <input id="author" type="text" th:field="*{author}" />
 
-        <label for="date">Date:</label>
+        <label for="date">Дата:</label>
         <input id="date" type="date" th:field="*{date}" />
 
-        <label for="number">Number:</label>
+        <label for="number">Номер:</label>
         <input id="number" type="number" th:field="*{number}" />
 
-        <button type="submit">Save</button>
+        <button type="submit">Сохранить</button>
     </form>
 </div>
 </body>

@@ -8,6 +8,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Setter
@@ -29,8 +31,8 @@ public class Document {
     private String type;
 
     @Column(name = "date")
-    @NotBlank
-    private String date;
+    @NotNull
+    private LocalDate date;
 
     @Column(name = "author")
     @NotBlank

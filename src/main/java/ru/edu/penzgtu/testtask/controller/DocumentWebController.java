@@ -1,5 +1,6 @@
 package ru.edu.penzgtu.testtask.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -8,17 +9,13 @@ import ru.edu.penzgtu.testtask.service.DocumentService;
 
 @Controller
 @RequestMapping("/documents")
+@RequiredArgsConstructor
 public class DocumentWebController {
-
     private final DocumentService documentService;
-
-    public DocumentWebController(DocumentService documentService) {
-        this.documentService = documentService;
-    }
 
     @GetMapping
     public String listDocuments(Model model) {
-        model.addAttribute("documents", documentService.getAllDocumentDtos());
+        model.addAttribute("documents", documentService.getAllDocuments());
         return "documentsList";
     }
 
@@ -38,16 +35,6 @@ public class DocumentWebController {
     public String saveDocument(@ModelAttribute DocumentDto documentDto) {
         documentService.createDocument(documentDto);
         return "redirect:/documents";
-    }
-
-    @GetMapping("/{id}")
-    public String viewDocument(@PathVariable Long id, Model model) {
-        DocumentDto documentDto = documentService.getDocumentDto(id);
-        if (documentDto == null) {
-            return "redirect:/documents";
-        }
-        model.addAttribute("document", documentDto);
-        return "documentView";
     }
 
     @GetMapping("/edit/{id}")

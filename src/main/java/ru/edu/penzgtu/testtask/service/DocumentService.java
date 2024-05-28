@@ -30,12 +30,16 @@ public class DocumentService {
         return documentMapper.toListDto(documents);
     }
 
-    public List<DocumentDto> getAllDocumentDtos() {
+    public List<DocumentDto> getAllDocuments() {
         List<Document> documents = documentRepository.findAll();
         return documentMapper.toListDto(documents);
     }
 
     public DocumentDto createDocument(DocumentDto documentDto) {
+        if (documentRepository.findByUniqueAttributes(documentDto.getTitle(), documentDto.getType(),
+                documentDto.getDate(), documentDto.getAuthor(), documentDto.getNumber()).isPresent()) {
+            throw new IllegalArgumentException("Document with the same attributes already exists");
+        }
         Document document = documentMapper.toEntity(documentDto);
         document = documentRepository.save(document);
         return documentMapper.toDto(document);
@@ -46,8 +50,8 @@ public class DocumentService {
                 .orElseThrow(() -> new CurrentException(ErrorType.NOT_FOUND,"Document with id: " + id + " not found"));
         document.setTitle(documentDto.getTitle());
         document.setType(documentDto.getType());
-        document.setDate(documentDto.getDate());
         document.setAuthor(documentDto.getAuthor());
+        document.setDate(documentDto.getDate());
         document.setNumber(documentDto.getNumber());
         document = documentRepository.save(document);
         return documentMapper.toDto(document);
