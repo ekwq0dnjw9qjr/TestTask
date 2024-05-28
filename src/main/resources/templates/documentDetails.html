@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Подробности документа</title>
+    <!-- Ссылки на CSS/JS файлы -->
+</head>
+<body>
+
+<div>
+    <h1>Подробности документа</h1>
+    <div>
+        <h2 th:text="${document.title}">Название документа</h2>
+        <p>ID: <span th:text="${document.id}">1</span></p>
+        <!-- Добавьте остальные свойства документа как необходимо -->
+    </div>
+    <a href="/documents">Вернуться к списку</a>
+</div>
+
+</body>
+</html>

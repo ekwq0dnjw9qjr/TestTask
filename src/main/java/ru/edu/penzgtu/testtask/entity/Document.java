@@ -2,6 +2,8 @@ package ru.edu.penzgtu.testtask.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,27 +28,18 @@ public class Document {
     @NotBlank
     private String type;
 
-    public Long getId() {
-        return this.id;
-    }
+    @Column(name = "date")
+    @NotBlank
+    private String date;
 
-    public @NotBlank String getTitle() {
-        return this.title;
-    }
+    @Column(name = "author")
+    @NotBlank
+    private String author;
 
-    public @NotBlank String getType() {
-        return this.type;
-    }
+    @Column(name = "number")
+    @Positive
+    private Long number;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public void setTitle(@NotBlank String title) {
-        this.title = title;
-    }
 
-    public void setType(@NotBlank String type) {
-        this.type = type;
-    }
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Create New Document</h1>
+    <form th:action="@{/documents/save}" th:object="${document}" method="post">
+
+        <label for="title">Title:</label>
+        <input id="title" type="text" th:field="*{title}" />
+
+        <label for="type">Type:</label>
+        <input id="type" type="text" th:field="*{type}" />
+
+        <label for="author">Author:</label>
+        <input id="author" type="text" th:field="*{author}" />
+
+        <label for="date">Date:</label>
+        <input id="date" type="date" th:field="*{date}" />
+
+        <label for="number">Number:</label>
+        <input id="number" type="number" th:field="*{number}" />
+
+        <button type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>
