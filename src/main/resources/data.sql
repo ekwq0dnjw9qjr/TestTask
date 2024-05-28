@@ -1,4 +1,10 @@
 INSERT INTO documents (title, type, author, date, number) VALUES
-                      ('Document zxc', 'fghf', 'ghdfhfh','2024-05-20', 101564);
+    ('Отчет о продажах за 2023 год', 'Отчет', 'Покровский Александр Викторович.','2024-01-29', 5070487838883);
 INSERT INTO documents (title, type, author, date, number) VALUES
-    ('Документ qwe', 'asd', 'ghfghd','2024-05-20', 1000);
+    ('Договор о аренде помещения', 'Договор', 'Федотов Максим Сергеевич','2024-05-20', 6000477836873);
+INSERT INTO documents (title, type, author, date, number) VALUES
+    ('Отчет по результатам инвентаризации', 'Отчет', 'Кузнецов Андрей Михайлович', '2024-03-10', 4080345938812);
+
+
+
+

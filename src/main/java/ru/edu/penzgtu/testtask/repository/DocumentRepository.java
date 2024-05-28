@@ -12,8 +12,8 @@ import java.util.Optional;
 
 @Repository
 public interface DocumentRepository extends JpaRepository<Document,Long> {
-    @Query("SELECT d FROM Document d WHERE d.title LIKE %:name%")
-    List<Document> findDocumentByTitle(@Param("name") String title);
+    @Query("SELECT d FROM Document d WHERE LOWER(d.title) LIKE LOWER(CONCAT('%', :title, '%'))")
+    List<Document> findDocumentByTitle(@Param("title") String title);
 
     @Query("SELECT d FROM Document d WHERE d.title = ?1 AND d.type = ?2 AND d.date = ?3 AND d.author = ?4 AND d.number = ?5")
     Optional<Document> findByUniqueAttributes(String title, String type, LocalDate date, String author, Long number);
