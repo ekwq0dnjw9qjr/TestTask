@@ -24,9 +24,6 @@ public class DocumentService {
         return documentMapper.toDto(document);
     }
 
-    public long count() {
-        return documentRepository.count();
-    }
 
     public List<DocumentDto> findDocumentsByTitle(String title) {
         List<Document> documents = documentRepository.findDocumentByTitle(title);

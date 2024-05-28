@@ -10,7 +10,6 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(description = "Информация о картине")
 public class DocumentDto {
 
     @JsonProperty("id")

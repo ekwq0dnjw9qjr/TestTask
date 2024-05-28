@@ -1,2 +1,4 @@
 INSERT INTO documents (title, type, author, date, number) VALUES
-                      ('Документ 1', 'Тип 1', 'Автор 1','2024-05-20', 101);
+                      ('Document zxc', 'fghf', 'ghdfhfh','2024-05-20', 101564);
+INSERT INTO documents (title, type, author, date, number) VALUES
+    ('Документ qwe', 'asd', 'ghfghd','2024-05-20', 1000);

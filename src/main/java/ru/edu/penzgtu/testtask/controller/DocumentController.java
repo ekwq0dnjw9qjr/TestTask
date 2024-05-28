@@ -20,7 +20,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/documents")
 @RequiredArgsConstructor
-@Tag(name = "Documents", description = "Operations on documents")
 public class DocumentController {
     private final DocumentService documentService;
     private final BaseResponseService baseResponseService;
@@ -29,10 +28,7 @@ public class DocumentController {
     public ResponseWrapper<DocumentDto> getDocumentById(@PathVariable Long id) {
         return baseResponseService.wrapSuccessResponse(documentService.getDocumentDto(id));
     }
-    @Operation(
-            summary = "Получение художника по имени",
-            description = "Позволяет выгрузить одного художника по имени из БД"
-    )
+
     @GetMapping("/documents")
     public ResponseWrapper<List<DocumentDto>> getDocumentsByName(@RequestParam String title) {
         return baseResponseService.wrapSuccessResponse(documentService.findDocumentsByTitle(title));
