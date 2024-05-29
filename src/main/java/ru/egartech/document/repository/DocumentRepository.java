@@ -22,8 +22,7 @@ public interface DocumentRepository extends JpaRepository<Document, Long> {
     @Query("SELECT d FROM Document d WHERE LOWER(d.author) LIKE LOWER(CONCAT('%', :author, '%'))")
     List<Document> findDocumentByAuthor(@Param("author") String author);
 
-   @Query("SELECT d FROM Document d WHERE d.date = :date")
-   List<Document> findDocumentByDate(@Param("date") LocalDate date);
+
 
 
 

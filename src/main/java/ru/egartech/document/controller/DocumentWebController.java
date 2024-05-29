@@ -27,7 +27,6 @@ public class DocumentWebController {
     @GetMapping("/search")
     public String searchDocuments(@RequestParam("searchType") String searchType,
                                   @RequestParam("query") String query,
-                                  @RequestParam(value = "date", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
                                   Model model) {
         List<DocumentDto> documentDtos;
         switch (searchType.toLowerCase()) {
@@ -39,9 +38,6 @@ public class DocumentWebController {
                 break;
             case "author":
                 documentDtos = documentService.findDocumentsByAuthor(query);
-                break;
-            case "date":
-                documentDtos = documentService.findDocumentsByDate(date);
                 break;
             default:
                 documentDtos = new ArrayList<>();
