@@ -25,10 +25,6 @@ public class DocumentController {
         return baseResponseService.wrapSuccessResponse(documentService.getDocumentDto(id));
     }
 
-    @GetMapping("/documents")
-    public ResponseWrapper<List<DocumentDto>> getDocumentsByTitle(@RequestParam String title) {
-        return baseResponseService.wrapSuccessResponse(documentService.findDocumentsByTitle(title));
-    }
 
     @GetMapping
     public List<DocumentDto> getAllDocuments() {
