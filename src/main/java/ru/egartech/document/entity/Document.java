@@ -1,4 +1,4 @@
-package ru.edu.penzgtu.testtask.entity;
+package ru.egartech.document.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

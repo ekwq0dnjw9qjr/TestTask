@@ -1,4 +1,4 @@
-package ru.edu.penzgtu.testtask.baseresponse;
+package ru.egartech.document.baseresponse;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;

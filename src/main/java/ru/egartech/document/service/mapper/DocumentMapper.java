@@ -1,8 +1,8 @@
-package ru.edu.penzgtu.testtask.service.mapper;
+package ru.egartech.document.service.mapper;
 
 import org.mapstruct.Mapper;
-import ru.edu.penzgtu.testtask.dto.DocumentDto;
-import ru.edu.penzgtu.testtask.entity.Document;
+import ru.egartech.document.dto.DocumentDto;
+import ru.egartech.document.entity.Document;
 
 import java.util.List;
 

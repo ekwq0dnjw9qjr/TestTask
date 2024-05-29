@@ -1,6 +1,4 @@
-package ru.edu.penzgtu.testtask.controller;
-
-
+package ru.egartech.document.controller;
 
 
 import jakarta.validation.Valid;
@@ -8,10 +6,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.edu.penzgtu.testtask.baseresponse.BaseResponseService;
-import ru.edu.penzgtu.testtask.baseresponse.ResponseWrapper;
-import ru.edu.penzgtu.testtask.dto.DocumentDto;
-import ru.edu.penzgtu.testtask.service.DocumentService;
+import ru.egartech.document.baseresponse.BaseResponseService;
+import ru.egartech.document.baseresponse.ResponseWrapper;
+import ru.egartech.document.dto.DocumentDto;
+import ru.egartech.document.service.DocumentService;
 
 import java.util.List;
 

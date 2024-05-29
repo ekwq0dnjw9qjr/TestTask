@@ -1,8 +1,8 @@
-package ru.edu.penzgtu.testtask.baseresponse;
+package ru.egartech.document.baseresponse;
 
 import lombok.Builder;
 import org.springframework.stereotype.Service;
-import ru.edu.penzgtu.testtask.exception.CurrentException;
+import ru.egartech.document.exception.CurrentException;
 
 @Service
 @Builder

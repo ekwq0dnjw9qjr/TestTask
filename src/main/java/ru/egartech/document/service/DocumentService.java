@@ -1,14 +1,15 @@
-package ru.edu.penzgtu.testtask.service;
+package ru.egartech.document.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.edu.penzgtu.testtask.dto.DocumentDto;
-import ru.edu.penzgtu.testtask.entity.Document;
-import ru.edu.penzgtu.testtask.exception.CurrentException;
-import ru.edu.penzgtu.testtask.exception.ErrorType;
-import ru.edu.penzgtu.testtask.repository.DocumentRepository;
-import ru.edu.penzgtu.testtask.service.mapper.DocumentMapper;
+import ru.egartech.document.dto.DocumentDto;
+import ru.egartech.document.entity.Document;
+import ru.egartech.document.exception.CurrentException;
+import ru.egartech.document.exception.ErrorType;
+import ru.egartech.document.repository.DocumentRepository;
+import ru.egartech.document.service.mapper.DocumentMapper;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -27,6 +28,21 @@ public class DocumentService {
 
     public List<DocumentDto> findDocumentsByTitle(String title) {
         List<Document> documents = documentRepository.findDocumentByTitle(title);
+        return documentMapper.toListDto(documents);
+    }
+
+    public List<DocumentDto> findDocumentsByType(String type) {
+        List<Document> documents = documentRepository.findDocumentByType(type);
+        return documentMapper.toListDto(documents);
+    }
+
+    public List<DocumentDto> findDocumentsByAuthor(String author) {
+        List<Document> documents = documentRepository.findDocumentByAuthor(author);
+        return documentMapper.toListDto(documents);
+    }
+
+    public List<DocumentDto> findDocumentsByDate(LocalDate date) {
+        List<Document> documents = documentRepository.findDocumentByDate(date);
         return documentMapper.toListDto(documents);
     }
 

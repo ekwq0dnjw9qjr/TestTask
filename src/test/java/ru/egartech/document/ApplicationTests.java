@@ -1,10 +1,10 @@
-package ru.edu.penzgtu.testtask;
+package ru.egartech.document;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TestTaskApplicationTests {
+class ApplicationTests {
 
     @Test
     void contextLoads() {

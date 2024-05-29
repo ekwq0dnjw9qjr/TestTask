@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 60%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* New style for filter button */
+button[type="button"] {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+a.create-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a.create-button:hover {
+    background-color: #45a049;
+}
+
+.action-links a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.action-links a:hover {
+    text-decoration: underline;
+}
+
+.action-links form {
+    display: inline;
+}
+
+.action-links form button {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.action-links form button:hover {
+    text-decoration: underline;
+}

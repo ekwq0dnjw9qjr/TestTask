@@ -1,7 +1,6 @@
-package ru.edu.penzgtu.testtask.dto;
+package ru.egartech.document.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -37,7 +36,6 @@ public class DocumentDto {
     @JsonProperty("number")
     @Positive
     private Long number;
-
 
 }
 

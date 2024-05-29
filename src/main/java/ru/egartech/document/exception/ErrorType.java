@@ -1,4 +1,4 @@
-package ru.edu.penzgtu.testtask.exception;
+package ru.egartech.document.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

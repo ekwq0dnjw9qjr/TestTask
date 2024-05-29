@@ -11,7 +11,7 @@
     <groupId>ru.egarteach</groupId>
     <artifactId>documentmanagement</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>LabOne</name>
+    <name>document</name>
     <description>Document management project for EGAR Technology</description>
     <properties>
         <java.version>17</java.version>

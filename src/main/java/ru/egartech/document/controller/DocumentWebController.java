@@ -1,11 +1,16 @@
-package ru.edu.penzgtu.testtask.controller;
+package ru.egartech.document.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.edu.penzgtu.testtask.dto.DocumentDto;
-import ru.edu.penzgtu.testtask.service.DocumentService;
+import ru.egartech.document.dto.DocumentDto;
+import ru.egartech.document.service.DocumentService;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/documents")
@@ -20,10 +25,32 @@ public class DocumentWebController {
     }
 
     @GetMapping("/search")
-    public String searchDocuments(@RequestParam("query") String query, Model model) {
-        model.addAttribute("documents", documentService.findDocumentsByTitle(query));
+    public String searchDocuments(@RequestParam("searchType") String searchType,
+                                  @RequestParam("query") String query,
+                                  @RequestParam(value = "date", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
+                                  Model model) {
+        List<DocumentDto> documentDtos;
+        switch (searchType.toLowerCase()) {
+            case "title":
+                documentDtos = documentService.findDocumentsByTitle(query);
+                break;
+            case "type":
+                documentDtos = documentService.findDocumentsByType(query);
+                break;
+            case "author":
+                documentDtos = documentService.findDocumentsByAuthor(query);
+                break;
+            case "date":
+                documentDtos = documentService.findDocumentsByDate(date);
+                break;
+            default:
+                documentDtos = new ArrayList<>();
+                break;
+        }
+        model.addAttribute("documents", documentDtos);
         return "documentsList";
     }
+
 
     @GetMapping("/create")
     public String showCreateForm(Model model) {
@@ -52,11 +79,10 @@ public class DocumentWebController {
         documentService.updateDocument(documentDto.getId(), documentDto);
         return "redirect:/documents";
     }
+
     @PostMapping("/delete/{id}")
     public String deleteDocument(@PathVariable Long id) {
         documentService.deleteDocument(id);
         return "redirect:/documents";
     }
-
 }
-

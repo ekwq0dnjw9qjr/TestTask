@@ -1,4 +1,4 @@
-package ru.edu.penzgtu.testtask.baseresponse;
+package ru.egartech.document.baseresponse;
 
 import lombok.Builder;
 import lombok.Data;

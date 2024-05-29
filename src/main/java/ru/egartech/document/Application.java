@@ -1,15 +1,13 @@
-package ru.edu.penzgtu.testtask;
-
+package ru.egartech.document;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class TestTaskApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestTaskApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

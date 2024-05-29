@@ -1,4 +1,4 @@
-package ru.edu.penzgtu.testtask.exception;
+package ru.egartech.document.exception;
 
 import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.edu.penzgtu.testtask.baseresponse.BaseResponseService;
-import ru.edu.penzgtu.testtask.baseresponse.ResponseWrapper;
+import ru.egartech.document.baseresponse.BaseResponseService;
+import ru.egartech.document.baseresponse.ResponseWrapper;
 
 @Slf4j
 @RestControllerAdvice
