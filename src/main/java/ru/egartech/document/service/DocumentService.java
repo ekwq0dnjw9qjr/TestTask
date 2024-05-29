@@ -41,6 +41,10 @@ public class DocumentService {
         return documentMapper.toListDto(documents);
     }
 
+    public List<DocumentDto> findDocumentsByDate(LocalDate date) {
+        List<Document> documents = documentRepository.findDocumentByDate(date);
+        return documentMapper.toListDto(documents);
+    }
 
     public List<DocumentDto> getAllDocuments() {
         List<Document> documents = documentRepository.findAll();
