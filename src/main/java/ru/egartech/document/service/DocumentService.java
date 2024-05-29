@@ -40,7 +40,7 @@ public class DocumentService {
         List<Document> documents = documentRepository.findDocumentByAuthor(author);
         return documentMapper.toListDto(documents);
     }
-
+    
     public List<DocumentDto> findDocumentsByDate(LocalDate date) {
         List<Document> documents = documentRepository.findDocumentByDate(date);
         return documentMapper.toListDto(documents);
